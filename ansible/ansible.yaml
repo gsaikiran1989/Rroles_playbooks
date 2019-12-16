@@ -1,0 +1,24 @@
+---
+  - hosts: all
+    become: True
+    become_method: sudo
+    become_user: root
+    gather_facts: True
+
+    tasks:
+      
+      - name: Create  user 1
+        user:
+          name: "{{ item }}"
+          password: $1$40gKCUMq$Cc0ggTrIwou1VpsWzwqUd/
+          state: present
+          shell: /bin/bash
+          system: no
+          createhome: yes
+          home: /home/"{{ item }}"
+
+        with_items:
+
+            - sree
+            - sai
+            - pinky

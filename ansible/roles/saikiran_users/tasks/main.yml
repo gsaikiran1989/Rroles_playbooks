@@ -1,0 +1,6 @@
+---
+# tasks file for saikiran_usersi
+
+- import_tasks: user.yml
+- import_tasks: nginx.yml 
+

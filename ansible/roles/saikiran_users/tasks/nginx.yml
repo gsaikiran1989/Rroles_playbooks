@@ -1,0 +1,14 @@
+---
+      - name: Install list of  packages 
+        apt:
+          name: "{{ packages }}"
+          state: present
+        vars:
+          packages:
+            - tree
+            - nginx
+
+      - name: start service nginx 
+        service:
+          name: nginx
+          state: started
